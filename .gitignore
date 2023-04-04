@@ -1,0 +1,24 @@
+# Node.js and npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Vite
+/dist
+/.vite
+/vite-cache
+
+# TypeScript
+/tsconfig.tsbuildinfo
+
+# IDEs and editors
+/.idea
+/.vscode
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db

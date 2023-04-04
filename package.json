@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.55.2",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1"
+  }
+}
