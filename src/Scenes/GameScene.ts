@@ -111,13 +111,6 @@ export default class GameScene extends Phaser.Scene {
       callbackScope: this,
       loop: true,
     });
-    this.physics.add.collider(
-      this.player.sprite,
-      this.obstacles,
-      this.handlePlayerObstacleCollision,
-      undefined,
-      this
-    );
   }
 
   private spawnObstacle(): void {
