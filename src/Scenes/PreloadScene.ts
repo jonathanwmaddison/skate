@@ -1,4 +1,10 @@
 // src/scenes/PreloadScene.ts
+import backgroundImg from '../assets/images/background.png';
+import groundImg from '../assets/images/ground.png';
+import playerAnimationImg from '../assets/images/player-animation.png';
+import logoImg from '../assets/images/logo.png';
+import obstacleImg from '../assets/images/obstacle.png';
+import playerImg from '../assets/images/player.png'
 
 import Phaser from 'phaser';
 
@@ -32,11 +38,11 @@ export default class PreloadScene extends Phaser.Scene {
     });
 
     // Load game assets here (images, audio, etc.)
-    this.load.image('background', 'assets/images/background.png');
-    this.load.image('player', 'assets/images/player.png');
-    this.load.image('obstacle', 'assets/images/obstacle.png');
-    this.load.image('ground', 'assets/images/ground.png');
-    this.load.spritesheet('player-animation', 'assets/images/player-animation.png', {
+    this.load.image('background', backgroundImg);
+    this.load.image('player', playerImg);
+    this.load.image('obstacle', obstacleImg);
+    this.load.image('ground', groundImg);
+    this.load.spritesheet('player-animation', playerAnimationImg, {
       frameWidth: 32,
       frameHeight: 48,
     });

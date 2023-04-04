@@ -1,9 +1,10 @@
 import Phaser from 'phaser';
-
+ 
 export default class GameScene extends Phaser.Scene {
   private player!: Phaser.Physics.Arcade.Sprite;
   private ground!: Phaser.Physics.Arcade.StaticGroup;
-  
+  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+
   constructor() {
     super('game');
   }
@@ -26,6 +27,8 @@ export default class GameScene extends Phaser.Scene {
 
     // Set up controls
     this.input.keyboard.on('keydown-SPACE', this.jump, this);
+    this.cursors = this.input.keyboard.createCursorKeys();
+
   }
 
   private jump(): void {
@@ -39,5 +42,16 @@ export default class GameScene extends Phaser.Scene {
     if (this.player.body.touching.down) {
       this.player.anims.play('player-idle', true);
     }
+    if (this.cursors.left?.isDown) {
+        this.player.setVelocityX(-200);
+      } else if (this.cursors.right?.isDown) {
+        this.player.setVelocityX(200);
+      } else {
+        this.player.setVelocityX(0);
+      }
+      
+      if (this.cursors.space?.isDown && this.player.body.touching.down) {
+        this.player.setVelocityY(-300);
+      }
   }
 }
