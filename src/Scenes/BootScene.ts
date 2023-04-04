@@ -1,15 +1,16 @@
 // src/scenes/BootScene.ts
+import logoImg from "../assets/images/logo.png";
 
-import Phaser from 'phaser';
+import Phaser from "phaser";
 
 export default class BootScene extends Phaser.Scene {
   constructor() {
-    super('boot');
+    super("boot");
   }
 
   preload(): void {
     // Load assets needed for the PreloadScene, like the loading bar or a logo
-    this.load.image('logo', 'assets/images/logo.png');
+    this.load.image("logo", logoImg);
   }
 
   create(): void {
@@ -17,7 +18,7 @@ export default class BootScene extends Phaser.Scene {
     this.configureGame();
 
     // Move on to the next scene, typically PreloadScene
-    this.scene.start('preload');
+    this.scene.start("preload");
   }
 
   private configureGame(): void {
